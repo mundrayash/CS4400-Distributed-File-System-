@@ -1,6 +1,4 @@
 import requests
-
-
 def write_to_node(machine_address, file_id, data):
     if machine_address is not None:
         requests.post(
@@ -77,7 +75,7 @@ def update_cache(file_id):
     machine_address = get_file_location(file_id)
     new_text = read_from_node(machine_address, file_id),
     print(
-        'Here are the most up to date changes, manually merge them and write again',
+        'Here are the most up to date changes',
         new_text,
         sep='\n'
     )

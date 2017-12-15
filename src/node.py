@@ -37,7 +37,6 @@ api.add_resource(FileServer, '/<string:file_id>')
 
 if __name__ == '__main__':
     if len(sys.argv) == 3:
-        # Flask runs twice in debug mode, this prevents setting the node up twice
         if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
             print('Initing node')
             requests.post(
@@ -54,4 +53,4 @@ if __name__ == '__main__':
         # Catastrophic delete EVERYTHING if node goes down! (Purposeful)
         files_collection.delete_many({})
     else:
-        print('Please supply an IP and Port')
+        print('Supply an IP and Port')

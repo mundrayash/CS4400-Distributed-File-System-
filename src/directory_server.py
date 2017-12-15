@@ -10,7 +10,6 @@ api = Api(app)
 files_collection = MongoClient().distrib_filesystem.ds_files
 machines_collection = MongoClient().distrib_filesystem.ds_machines
 
-
 class DirServerFile(Resource):
     def __init__(self):
         self.parser = reqparse.RequestParser()

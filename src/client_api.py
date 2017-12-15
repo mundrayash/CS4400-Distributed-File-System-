@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from bson import ObjectId
 import requests
-import utils_client_api as utils
+import client_util as utils
 
 cache_collection = MongoClient().distrib_filesystem.api_files
 # FileID: FileAge
@@ -24,8 +24,6 @@ def open_file(filename):
     else:
         print(resp.json()['message'])
 
-
-# Reads file from server
 def read(filename):
     # Check for cache
     try:
